@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ReactSVG from 'react-svg';
 
 export const Wrapper = styled.div`
   margin: 0.5rem;
@@ -21,16 +22,27 @@ export const Header = styled.div`
 `;
 
 export const Footer = styled.div`
-`
+`;
+
+interface IReactSVG {
+  path: string;
+}
+
+export const Favorite = styled<IReactSVG>(ReactSVG).attrs({
+})`
+`;
 
 export const SourceLink = styled.a`
   text-decoration: none;
   &::before {
     content: '';
-    width: 1rem;
-    height: 1rem;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
     background-image: url(/assets/Link.svg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
+    background-position: center;
+    margin-right: 0.25rem;
   }
 `;

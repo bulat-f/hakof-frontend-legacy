@@ -1,7 +1,7 @@
 import * as React  from 'react';
 import { H2, P }   from '../Typography';
 import Header      from './Header';
-import { Content, Footer, SourceLink, Wrapper } from './styles';
+import { Content, Favorite, Footer, SourceLink, Wrapper } from './styles';
 
 interface IProps {
   source_href: string;
@@ -22,6 +22,7 @@ class Card extends React.PureComponent<IProps, object> {
           <P>{description}</P>
         </Content>
         <Footer>
+          <Favorite />
           <SourceLink href={source_href}>{source_title}</SourceLink>
         </Footer>
       </Wrapper>
