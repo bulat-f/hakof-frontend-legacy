@@ -1,31 +1,37 @@
 import * as React  from 'react';
 import { H2, P }   from '../Typography';
+import Footer      from './Footer';
 import Header      from './Header';
-import { Content, Favorite, Footer, SourceLink, Wrapper } from './styles';
+import * as Styles from './styles';
+import { Article } from '../../api/articles';
 
-interface IProps {
-  source_href: string;
-  source_title: string;
-  title: string;
-  description: string;
-}
+// interface IProps {
+//   href: string,
+//   source_href: string;
+//   source_title: string;
+//   comments_count: number;
+//   title: string;
+//   description: string;
+// }
 
-class Card extends React.PureComponent<IProps, object> {
+class Card extends React.PureComponent<Article> {
   public render() {
-    const { source_href, source_title, title, description } = this.props;
+    const { id, source_href, source_title, comments_count, title, description } = this.props;
 
     return (
-      <Wrapper>
+      <Styles.Wrapper>
+        <Styles.Link href={`/articles/${id}`} />
         <Header />
-        <Content>
+        <Styles.Content>
           <H2>{title}</H2>
           <P>{description}</P>
-        </Content>
-        <Footer>
-          <Favorite />
-          <SourceLink href={source_href}>{source_title}</SourceLink>
-        </Footer>
-      </Wrapper>
+        </Styles.Content>
+        <Footer
+          source_href={source_href}
+          source_title={source_title}
+          comments_count={comments_count}
+        />
+      </Styles.Wrapper>
     );
   }
 }
