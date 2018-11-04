@@ -1,21 +1,28 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Article } from '../../api/articles';
+import { IArticle } from '../../api/articles';
 import Card from '../../components/Card';
 
 interface IProps {
-  articles: Array<Article>;
+  articles: IArticle[];
 }
 
 class HomePage extends React.PureComponent<IProps> {
-  render() {
+  public render() {
     const { articles } = this.props;
     return (
-      articles && articles.map(article => (
-        <Card {...article} />
-      ))
+      <div>
+        <h1>Here is our articles</h1>
+        {articles && articles.map(article => (
+          <Card {...article} />
+        ))}
+      </div>
     );
   }
 }
 
-export default connect()(HomePage);
+const mapStateToProps = (state: any): IArticle[] | null => (
+  state.articles
+);
+
+export default connect(mapStateToProps, null)(HomePage);

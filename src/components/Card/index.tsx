@@ -1,9 +1,9 @@
 import * as React  from 'react';
+import { IArticle } from '../../api/articles';
 import { H2, P }   from '../Typography';
 import Footer      from './Footer';
 import Header      from './Header';
 import * as Styles from './styles';
-import { Article } from '../../api/articles';
 
 // interface IProps {
 //   href: string,
@@ -14,7 +14,7 @@ import { Article } from '../../api/articles';
 //   description: string;
 // }
 
-class Card extends React.PureComponent<Article> {
+class Card extends React.PureComponent<IArticle> {
   public render() {
     const { id, source_href, source_title, comments_count, title, description } = this.props;
 
