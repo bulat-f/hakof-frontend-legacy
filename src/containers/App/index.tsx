@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router';
 import styled from 'styled-components';
-import HomePage from './containers/HomePage';
+import HomePage from '../HomePage';
 
 const Wrapper = styled.div`
   margin: auto;

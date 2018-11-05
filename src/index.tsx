@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { injectGlobal } from 'styled-components';
-import Root from './components/Root';
+import Root from './containers/Root';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore, { history } from './store/configureStore';
 
