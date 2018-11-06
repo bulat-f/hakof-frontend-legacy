@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router';
 import styled from 'styled-components';
+import Header from '../../components/Header';
 import HomePage from '../HomePage';
 
 const Wrapper = styled.div`
@@ -11,11 +12,14 @@ const Wrapper = styled.div`
 class App extends React.Component {
   public render() {
     return (
-      <Wrapper>
-        <Switch>
-          <Route exact={true} path="/" component={HomePage} />
-        </Switch>
-      </Wrapper>
+      <div>
+        <Header />
+        <Wrapper>
+          <Switch>
+            <Route exact={true} path="/" component={HomePage} />
+          </Switch>
+        </Wrapper>
+      </div>
     );
   }
 }

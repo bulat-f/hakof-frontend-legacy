@@ -18,13 +18,6 @@ injectGlobal`
   }
 
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Sans+Pro:400,700,900&subset=cyrillic-ext');
-  h1, h2 {
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-
-  p {
-    font-family: 'Open Sans', sans-serif;
-  }
 `;
 
 const store = configureStore();
