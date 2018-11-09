@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-  height: 4rem;
   background: #fff;
 `;
 
@@ -9,6 +8,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 4rem;
 `;
 
 export const Logo = styled.div`
