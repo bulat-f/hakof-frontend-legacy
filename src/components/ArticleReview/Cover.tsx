@@ -1,0 +1,43 @@
+import * as React from 'react';
+import styled from 'styled-components';
+
+interface IProps {
+  src?: string | null;
+};
+
+const Wrapper = styled.div`
+  position: relative;
+  flex-basis: 33.333%;
+  min-height: 10rem;
+`; 
+
+const Inner = styled<{ src: string }, 'div'>('div')`
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(${props => props.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2px 0 0 2px;
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
+    border-radius: 2px 2px 0 0;
+  }
+`;
+
+class Cover extends React.PureComponent<IProps, {}>
+{
+  public render() {
+    const { src } = this.props;
+
+    return (
+      src && <Wrapper>
+        <Inner src={src} />
+      </Wrapper>
+    );
+  }
+}
+
+export default Cover;

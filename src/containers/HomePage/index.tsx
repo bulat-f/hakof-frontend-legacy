@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { IArticle } from '../../api/articles';
-import Card from '../../components/Card';
+import ArticleReview from 'src/components/ArticleReview';
+import { IArticleReview } from '../../api/articles';
 import { fetch } from './actions';
 
 interface IProps extends IStateProps, IDispatchProps {
@@ -19,7 +19,7 @@ class HomePage extends React.PureComponent<IProps> {
       <div>
         <h1>Here is our articles ({articles && articles.length})</h1>
         {articles && articles.map(article => (
-          <Card {...article} />
+          <ArticleReview {...article} />
         ))}
       </div>
     );
@@ -27,7 +27,7 @@ class HomePage extends React.PureComponent<IProps> {
 }
 
 interface IStateProps {
-  articles: IArticle[] | null;
+  articles: IArticleReview[] | null;
 }
 
 const mapStateToProps = (state: any): IStateProps => ({

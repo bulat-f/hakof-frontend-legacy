@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import ReactSVG from 'react-svg';
+import Card, { Inner as CardInner } from '../Card/index';
 
-export const Wrapper = styled.div`
-  position: relative;
-  margin: 0.5rem;
-  padding: 1rem 1.5rem;
-  background: #fff;
-  border-radius: 2px;
-  border: 1px #e0e0f0 solid;
+export const Wrapper = styled(Card)`
+  display: flex;
   max-width: 54rem;
+  min-height: 10rem;
+
+   @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
+    flex-direction: column;
+  }
+`;
+
+export const Inner = styled(CardInner)`
+  flex: 1 1 0;
 `;
 
 export const Link = styled.a`
@@ -21,10 +26,8 @@ export const Link = styled.a`
 `;
 
 export const Content = styled.div`
-  margin: 1rem -1.5rem;
-  padding: 1rem 1.5rem;
-  border-top: 1px #f2f2ff solid;
-  border-bottom: 1px #f2f2ff solid;
+  margin: 0 -1.5rem;
+  padding: 0.5rem 1.5rem;
 `;
 
 export const Header = styled.div`

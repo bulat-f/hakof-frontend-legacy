@@ -1,7 +1,7 @@
-import { IArticle } from '../../../api/articles';
+import { IArticleReview } from '../../../api/articles';
 import * as types from '../constants/actionTypes';
 
-const articlesReducer = (state: IArticle[] | null = null, action: any) => {
+const articlesReducer = (state: IArticleReview[] | null = null, action: any) => {
   switch (action.type) {
     case types.FETCH_ARTICLES_REQUEST:
       return null;

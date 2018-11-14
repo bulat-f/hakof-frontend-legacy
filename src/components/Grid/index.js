@@ -20,14 +20,14 @@ export const Grid = styled.div`
   padding-right: ${({ theme }) => `${theme.grid.gutterWidth / 2}px`};
   ${clearfix};
 
-  @media (min-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
-    width: ${({ theme }) => `${theme.containerWidth.sm}px`};
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
+    max-width: ${({ theme }) => `${theme.containerWidth.sm}px`};
   }
-  @media (min-width: ${({ theme }) => `${theme.mediaSizes.mdMin}px`}) {
-    width: ${({ theme }) => `${theme.containerWidth.md}px`};
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.mdMin}px`}) {
+    max-width: ${({ theme }) => `${theme.containerWidth.md}px`};
   }
-  @media (min-width: ${({ theme }) => `${theme.mediaSizes.lgMin}px`}) {
-    width: ${({ theme }) => `${theme.containerWidth.lg}px`};
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.lgMin}px`}) {
+    max-width: ${({ theme }) => `${theme.containerWidth.lg}px`};
   }
 `;
 
