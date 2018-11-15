@@ -19,8 +19,20 @@ export interface IArticleReview {
   cover?: string | null;
 }
 
+export interface IArticle extends IArticleReview {
+  body: string;
+}
+
 export const getAll = () => {
   return new Promise((resolve) => {
     return resolve(articles);
   });
 };
+
+export const getOne = (id: number) => {
+  return new Promise((resolve) => {
+    const review: IArticleReview | undefined = articles.find((a: IArticleReview) => a.id === id);
+    const article: IArticle = Object.assign({}, review, { body: 'Article about something big and great.' });
+    return resolve(article);
+  });
+}

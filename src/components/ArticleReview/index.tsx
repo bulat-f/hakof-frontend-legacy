@@ -22,7 +22,7 @@ class ArticleReview extends React.PureComponent<IArticleReview> {
     return (
       <Styles.Wrapper>
         <Cover src={cover} />
-        <Styles.Link href={`/articles/${id}`} />
+        <Styles.Link to={`/articles/${id}`} />
         <Styles.Inner>
           <Header />
           <Styles.Content>

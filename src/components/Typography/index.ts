@@ -11,7 +11,12 @@ export const H2 = styled.h2`
   margin: 0.4rem 0;
 `;
 
-export const P = styled.p`
+interface IParagraphProps {
+  italic?: boolean;
+}
+
+export const P = styled<IParagraphProps, 'p'>('p')`
   font-family: 'Open Sans', sans-serif;
+  font-style: ${props => props.italic ? 'italic' : 'normal'};
   margin: 0.5rem 0;
 `;

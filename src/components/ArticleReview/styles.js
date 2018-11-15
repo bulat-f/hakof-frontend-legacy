@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ReactSVG from 'react-svg';
+import { Link as RouterLink } from 'react-router-dom';
 import Card, { Inner as CardInner } from '../Card/index';
 
 export const Wrapper = styled(Card)`
@@ -16,7 +17,7 @@ export const Inner = styled(CardInner)`
   flex: 1 1 0;
 `;
 
-export const Link = styled.a`
+export const Link = styled(RouterLink)`
   position: absolute;
   top: 0;
   bottom: 0;
