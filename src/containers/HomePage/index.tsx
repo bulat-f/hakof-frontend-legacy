@@ -17,7 +17,6 @@ class HomePage extends React.PureComponent<IProps> {
     const { articles } = this.props;
     return (
       <div>
-        <h1>Here is our articles ({articles && articles.length})</h1>
         {articles && articles.map(article => (
           <ArticleReview {...article} />
         ))}
