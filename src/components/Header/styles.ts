@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
@@ -11,9 +12,11 @@ export const Container = styled.div`
   height: 4rem;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   display: inline-block;
   font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+  text-decoration: none;
   font-size: 2rem;
 `;
 

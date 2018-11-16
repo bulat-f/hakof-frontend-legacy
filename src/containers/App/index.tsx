@@ -10,17 +10,21 @@ import HomePage from '../HomePage';
 const Wrapper = styled.div`
 `;
 
+const Content = styled(Grid)`
+  min-height: calc(100vh - 8.5rem);
+`;
+
 class App extends React.Component {
   public render() {
     return (
       <Wrapper>
         <Header />
-        <Grid>
+        <Content>
           <Switch>
             <Route exact={true} path="/" component={HomePage} />
             <Route exact={true} path="/articles/:id" component={ArticlePage} />
           </Switch>
-        </Grid>
+        </Content>
         <Footer />
       </Wrapper>
     );

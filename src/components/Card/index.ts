@@ -13,8 +13,11 @@ const Card = styled.div`
 `;
 
 export const Inner = styled.div`
-  display: inline-block;
   padding: 1rem 1.5rem;
+
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
+    padding: 0.8rem 0.5em;
+  }
 `;
 
 export default Card;
