@@ -19,13 +19,13 @@ export const Grid = styled.div`
   padding-left:  ${({ theme }) => `${theme.grid.gutterWidth / 2}px`};
   padding-right: ${({ theme }) => `${theme.grid.gutterWidth / 2}px`};
   ${clearfix};
+  max-width: ${({ theme }) => `${theme.containerWidth.md}px`};
 
-  @media screen and (min-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
-    max-width: ${({ theme }) => `${theme.containerWidth.sm}px`};
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.xsMax}px`}) {
+    padding-left:  ${({ theme }) => `${theme.grid.gutterWidth / 6}px`};
+    padding-right: ${({ theme }) => `${theme.grid.gutterWidth / 6}px`};
   }
-  @media screen and (min-width: ${({ theme }) => `${theme.mediaSizes.mdMin}px`}) {
-    max-width: ${({ theme }) => `${theme.containerWidth.md}px`};
-  }
+
   @media screen and (min-width: ${({ theme }) => `${theme.mediaSizes.lgMin}px`}) {
     max-width: ${({ theme }) => `${theme.containerWidth.lg}px`};
   }
@@ -35,6 +35,11 @@ export const Row = styled.div`
   margin-left:  ${({ theme }) => `-${theme.grid.gutterWidth / 2}px`};
   margin-right: ${({ theme }) => `-${theme.grid.gutterWidth / 2}px`};
   ${clearfix};
+
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.xsMax}px`}) {
+    margin-left:  ${({ theme }) => `-${theme.grid.gutterWidth / 6}px`};
+    margin-right: ${({ theme }) => `-${theme.grid.gutterWidth / 6}px`};
+  }
 
   ${props => props.flex && css`
     position: relative;

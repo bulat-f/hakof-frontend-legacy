@@ -8,7 +8,7 @@ export const Wrapper = styled(Card)`
   max-width: 54rem;
   min-height: 10rem;
 
-   @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
     flex-direction: column;
   }
 `;
@@ -27,8 +27,8 @@ export const Link = styled(RouterLink)`
 `;
 
 export const Content = styled.div`
-  margin: 0 -1.5rem;
-  padding: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0.5rem 0;
 `;
 
 export const Header = styled.div`

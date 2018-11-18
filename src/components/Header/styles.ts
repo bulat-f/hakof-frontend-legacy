@@ -19,6 +19,7 @@ export const Logo = styled(Link)`
   color: #000;
   text-decoration: none;
   font-size: 2rem;
+  z-index: 200;
 `;
 
 export const MenuIcon = styled.div`
@@ -41,11 +42,11 @@ export const Menu = styled<{ show: boolean }, 'ul'>('ul')`
   z-index: 110;
 
   @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.xsMax}px`}) {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: block;
-    height: 100vh;
+    height: calc(100vh - 4rem);
     width: 100vw;
     padding-top: 4rem;
 

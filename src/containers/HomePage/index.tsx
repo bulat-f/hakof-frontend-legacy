@@ -15,13 +15,10 @@ class HomePage extends React.PureComponent<IProps> {
 
   public render() {
     const { articles } = this.props;
-    return (
-      <div>
-        {articles && articles.map(article => (
-          <ArticleReview {...article} />
-        ))}
-      </div>
-    );
+
+    return articles && articles.map(article => (
+      <ArticleReview {...article} />
+    ));
   }
 }
 
