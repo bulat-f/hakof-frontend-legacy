@@ -9,7 +9,9 @@ const Footer = () => (
         <Styles.Copyrights>Hakof.ru 2018 (c)</Styles.Copyrights>
         <Styles.Contacts>
           <Styles.ContactsItem>
-            <a href="mailto:hakof@mail.ru">hakof@mail.ru</a>
+            <Styles.Mail href="mailto:hakof@mail.ru">
+              <Styles.MailIcon />
+            </Styles.Mail>
           </Styles.ContactsItem>
           <Styles.ContactsItem>
             <a target="_blank" href="https://vk.com/id1">

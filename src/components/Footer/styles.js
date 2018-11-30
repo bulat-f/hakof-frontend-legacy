@@ -34,6 +34,32 @@ export const ContactsItem = styled.li`
   }
 `;
 
+export const Mail = styled.a`
+  &:before {
+    content: 'hakof@mail.ru';
+    display: inline-block;
+
+    @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.xsMax}px`}) {
+      display: none;
+    }
+  }
+`;
+
+export const MailIcon = styled(ReactSVG).attrs({
+  src: props => `/assets/Mail.svg`,
+  svgStyle: {
+    height: '1.2rem',
+    width: '1.2rem'
+  }
+})`
+  display: none;
+  fill: #fff;
+
+  @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.xsMax}px`}) {
+    display: inline-block;
+  }
+`;
+
 export const SocialLogo = styled(ReactSVG).attrs({
   src: props => `/assets/icon-${props.social}.svg`,
   svgStyle: {
