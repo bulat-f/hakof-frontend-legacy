@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import Footer from '../../components/Footer';
 import { Grid } from '../../components/Grid';
 import Header from '../../components/Header';
+import ScrollToTop from '../../components/ScrollToTop';
 import ArticlePage from '../ArticlePage';
 import HomePage from '../HomePage';
 
-const Wrapper = styled.div`
+const Wrapper = styled(ScrollToTop)`
 `;
 
 const Content = styled(Grid)`

@@ -11,16 +11,12 @@ injectGlobal`
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     position: relative;
-  }
-
-  #root {
-    height: 100%;
   }
 
   html {
     font-size: 16px;
+    overflow: auto;
   }
 
   body {

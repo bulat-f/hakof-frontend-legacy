@@ -17,7 +17,7 @@ class HomePage extends React.PureComponent<IProps> {
     const { articles } = this.props;
 
     return articles && articles.map(article => (
-      <ArticleReview {...article} />
+      <ArticleReview key={article.id} {...article} />
     ));
   }
 }
