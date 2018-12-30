@@ -17,7 +17,7 @@ import * as Styles from './styles';
 
 class ArticleReview extends React.PureComponent<IArticleReview> {
   public render() {
-    const { id, source_href, source_title, comments_count, title, description, cover } = this.props;
+    const { id, source_href, source_title, title, description, cover } = this.props;
 
     return (
       <Styles.Wrapper>
@@ -32,7 +32,6 @@ class ArticleReview extends React.PureComponent<IArticleReview> {
           <Footer
             source_href={source_href}
             source_title={source_title}
-            comments_count={comments_count}
           />
         </Styles.Inner>
       </Styles.Wrapper>
