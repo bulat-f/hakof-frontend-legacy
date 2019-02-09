@@ -1,21 +1,22 @@
 import * as React from 'react';
 import { IArticle } from '../../api/articles';
-import Card, { Inner } from '../Card';
 import { H1, P } from '../Typography';
 import Cover from './Cover';
+import * as Styles from './styles';
 
 class Article extends React.PureComponent<IArticle, any> {
   public render() {
     const { title, description, cover, body } = this.props;
     return (
-      <Card>
-        <Inner>
+      <Styles.Wrapper>
+        <Cover cover={cover}>
           <H1>{title}</H1>
+        </Cover>
+        <Styles.Content>
           <P italic={true}>{description}</P>
-          {cover && <Cover src={cover} />}
           <P>{body}</P>
-        </Inner>
-      </Card>
+        </Styles.Content>
+      </Styles.Wrapper>
     );
   }
 }

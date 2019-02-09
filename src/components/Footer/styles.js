@@ -3,7 +3,7 @@ import { P } from '../Typography';
 import ReactSVG from 'react-svg';
 
 export const Wrapper = styled.footer`
-  background-color: #000;
+  background-color: #293039;
   color: #fff;
   margin-top: 1.5rem;
 `;

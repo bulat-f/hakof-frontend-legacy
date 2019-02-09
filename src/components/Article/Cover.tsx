@@ -1,14 +1,20 @@
 import * as React from 'react';
+import { Inner } from '../Card';
 import * as Styles from './styles';
 
-class Cover extends React.PureComponent<{ src: string; }, any> {
+interface IProps {
+  cover?: string | null;
+  children: React.ReactChild;
+}
+
+class Cover extends React.PureComponent<IProps, {}> {
   public render() {
-    const { src } = this.props;
+    const { cover, children } = this.props;
 
     return (
-      <Styles.ImageWrapper>
-        <Styles.Image src={src} />
-      </Styles.ImageWrapper>
+      <Styles.Cover cover={cover}>
+        <Inner>{children}</Inner>
+      </Styles.Cover>
     );
   }
 }

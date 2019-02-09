@@ -15,6 +15,8 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled(Grid)`
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 `;
 
