@@ -8,26 +8,31 @@ import ScrollToTop from '../../components/ScrollToTop';
 import ArticlePage from '../ArticlePage';
 import HomePage from '../HomePage';
 
-const Wrapper = styled(ScrollToTop)`
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 const Content = styled(Grid)`
-  min-height: calc(100vh - 8.5rem);
+  flex-grow: 1;
 `;
 
 class App extends React.Component {
   public render() {
     return (
-      <Wrapper>
-        <Header />
-        <Content>
-          <Switch>
-            <Route exact={true} path="/" component={HomePage} />
-            <Route exact={true} path="/articles/:id" component={ArticlePage} />
-          </Switch>
-        </Content>
-        <Footer />
-      </Wrapper>
+      <ScrollToTop>
+        <Wrapper>
+          <Header />
+          <Content>
+            <Switch>
+              <Route exact={true} path="/" component={HomePage} />
+              <Route exact={true} path="/articles/:id" component={ArticlePage} />
+            </Switch>
+          </Content>
+          <Footer />
+        </Wrapper>
+      </ScrollToTop>
     );
   }
 }

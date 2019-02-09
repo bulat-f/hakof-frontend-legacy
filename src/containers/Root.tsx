@@ -25,11 +25,7 @@ const theme = {
     columns: 12,
     gutterWidth: 30,
   },
-  containerWidth: {
-    sm: 720,
-    md: 940,
-    lg: 1140
-  }
+  containerMaxWidth: 1140
 };
 
 class Root extends React.Component<any> {

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   background: #fff;
   position: relative;
+  border-bottom: 1px #ccc solid;
 `;
 
 export const Container = styled.div`

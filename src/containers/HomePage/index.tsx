@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import ArticleReview from 'src/components/ArticleReview';
-import { IArticleReview } from '../../api/articles';
+import { IArticleReviewList } from '../../api/articles';
 import { fetch } from './actions';
+import { getArticles, getFeatureds, isLoading } from './reducers';
+
+import * as Styles from './styles';
 
 interface IProps extends IStateProps, IDispatchProps {
   
@@ -14,20 +17,33 @@ class HomePage extends React.PureComponent<IProps> {
   }
 
   public render() {
-    const { articles } = this.props;
+    const { featureds, articles } = this.props;
 
-    return articles && articles.map(article => (
-      <ArticleReview key={article.id} {...article} />
-    ));
+    return (
+      <Styles.Wrapper>
+        <Styles.FeaturedWrapper>
+          {featureds.map(article => (
+             <ArticleReview key={article.id} {...article} />
+          ))}
+        </Styles.FeaturedWrapper>
+        {articles.map(article => (
+          <ArticleReview key={article.id} {...article} />
+        ))}
+      </Styles.Wrapper>
+    );
   }
 }
 
 interface IStateProps {
-  articles: IArticleReview[] | null;
+  featureds: IArticleReviewList;
+  articles: IArticleReviewList;
+  loading: boolean;
 }
 
 const mapStateToProps = (state: any): IStateProps => ({
-  articles: state.articles
+  articles: getArticles(state),
+  featureds: getFeatureds(state),
+  loading: isLoading(state)
 });
 
 interface IDispatchProps {

@@ -5,7 +5,11 @@ const Card = styled.div`
   margin: 1rem 0;
   background: #fff;
   border-radius: 2px;
-  border: 1px #e0e0f0 solid;
+  border: 1px #ccc solid;
+  
+  & + & {
+    margin-top: 0;
+  }
 `;
 
 export const Inner = styled.div`

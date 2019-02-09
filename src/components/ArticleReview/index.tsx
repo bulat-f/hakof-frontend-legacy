@@ -5,6 +5,7 @@ import Cover       from './Cover'
 import Footer      from './Footer';
 import Header      from './Header';
 import * as Styles from './styles';
+import Wrapper from './Wrapper';
 
 // interface IProps {
 //   href: string,
@@ -17,10 +18,10 @@ import * as Styles from './styles';
 
 class ArticleReview extends React.PureComponent<IArticleReview> {
   public render() {
-    const { id, source_href, source_title, title, description, cover } = this.props;
+    const { id, source_href, source_title, title, description, cover, featured } = this.props;
 
     return (
-      <Styles.Wrapper>
+      <Wrapper featured={featured}>
         <Cover src={cover} />
         <Styles.Link to={`/articles/${id}`} />
         <Styles.Inner>
@@ -34,7 +35,7 @@ class ArticleReview extends React.PureComponent<IArticleReview> {
             source_title={source_title}
           />
         </Styles.Inner>
-      </Styles.Wrapper>
+      </Wrapper>
     );
   }
 }

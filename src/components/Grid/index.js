@@ -19,15 +19,12 @@ export const Grid = styled.div`
   padding-left:  ${({ theme }) => `${theme.grid.gutterWidth / 2}px`};
   padding-right: ${({ theme }) => `${theme.grid.gutterWidth / 2}px`};
   ${clearfix};
-  max-width: ${({ theme }) => `${theme.containerWidth.md}px`};
+  max-width: ${({ theme }) => `${theme.containerMaxWidth}px`};
+  width: 100%;
 
   @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.xsMax}px`}) {
     padding-left:  ${({ theme }) => `${theme.grid.gutterWidth / 6}px`};
     padding-right: ${({ theme }) => `${theme.grid.gutterWidth / 6}px`};
-  }
-
-  @media screen and (min-width: ${({ theme }) => `${theme.mediaSizes.lgMin}px`}) {
-    max-width: ${({ theme }) => `${theme.containerWidth.lg}px`};
   }
 `;
 

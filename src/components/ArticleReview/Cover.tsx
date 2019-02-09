@@ -7,7 +7,7 @@ interface IProps {
 
 const Wrapper = styled.div`
   position: relative;
-  flex-basis: 33.333%;
+  flex-basis: 35%;
   min-height: 10rem;
 `; 
 

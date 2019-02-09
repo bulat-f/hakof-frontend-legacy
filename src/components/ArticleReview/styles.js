@@ -5,8 +5,13 @@ import Card, { Inner as CardInner } from '../Card/index';
 
 export const Wrapper = styled(Card)`
   display: flex;
-  max-width: 54rem;
   min-height: 10rem;
+  box-shadow: 0 0 6px 3px #eee;
+  flex-direction: ${props => props.featured ? 'column' : 'row'};
+
+  &:hover {
+    box-shadow: 0 0 10px 5px #eee;
+  }
 
   @media screen and (max-width: ${({ theme }) => `${theme.mediaSizes.smMin}px`}) {
     flex-direction: column;
