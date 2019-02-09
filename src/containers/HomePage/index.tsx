@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { IArticleReview, IArticleReviewList } from 'src/api/articles';
 import ArticleReview from 'src/components/ArticleReview';
-import { IArticleReviewList } from '../../api/articles';
+import FeaturedArticleReview from 'src/components/FeaturedArticleReview';
 import { fetch } from './actions';
-import { getArticles, getFeatureds, isLoading } from './reducers';
+import { getArticles, getFeatured, getSelected, isLoading } from './reducers';
 
 import * as Styles from './styles';
 
@@ -17,15 +18,16 @@ class HomePage extends React.PureComponent<IProps> {
   }
 
   public render() {
-    const { featureds, articles } = this.props;
+    const { featured, selected, articles } = this.props;
 
     return (
       <Styles.Wrapper>
-        <Styles.FeaturedWrapper>
-          {featureds.map(article => (
+        <FeaturedArticleReview {...featured} />
+        <Styles.Section>
+          {selected.map(article => (
              <ArticleReview key={article.id} {...article} />
           ))}
-        </Styles.FeaturedWrapper>
+        </Styles.Section>
         {articles.map(article => (
           <ArticleReview key={article.id} {...article} />
         ))}
@@ -35,14 +37,16 @@ class HomePage extends React.PureComponent<IProps> {
 }
 
 interface IStateProps {
-  featureds: IArticleReviewList;
+  featured: IArticleReview;
+  selected: IArticleReviewList;
   articles: IArticleReviewList;
   loading: boolean;
 }
 
 const mapStateToProps = (state: any): IStateProps => ({
+  featured: getFeatured(state),
   articles: getArticles(state),
-  featureds: getFeatureds(state),
+  selected: getSelected(state),
   loading: isLoading(state)
 });
 

@@ -18,10 +18,10 @@ import Wrapper from './Wrapper';
 
 class ArticleReview extends React.PureComponent<IArticleReview> {
   public render() {
-    const { id, source_href, source_title, title, description, cover, featured } = this.props;
+    const { id, source_href, source_title, title, description, cover, selected } = this.props;
 
     return (
-      <Wrapper featured={featured}>
+      <Wrapper selected={selected}>
         <Cover src={cover} />
         <Styles.Link to={`/articles/${id}`} />
         <Styles.Inner>

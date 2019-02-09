@@ -7,13 +7,13 @@ export const Wrapper = styled(Card)`
   min-height: 10rem;
   min-width: 20rem;
   box-shadow: 0 0 6px 3px #eee;
-  flex-direction: ${(props: {featured?: boolean}) => props.featured ? 'column' : 'row'};
+  flex-direction: ${(props: {selected?: boolean}) => props.selected ? 'column' : 'row'};
 
   &:hover {
     box-shadow: 0 0 10px 5px #eee;
   }
 
-  ${(props: {featured?: boolean}) => props.featured ? (
+  ${(props: {selected?: boolean}) => props.selected ? (
     css`
       margin: 0.5rem !important;
     `

@@ -15,11 +15,15 @@ const articlesReducer = (state: any = null, action: any): IArticleReviewList | n
 export default articlesReducer;
 
 export const getArticles = (state: any): IArticleReviewList => {
-  return state.articles ? state.articles.filter((article : IArticleReview) => !article.featured) : []
+  return state.articles ? state.articles.filter((article : IArticleReview) => !article.selected && !article.featured) : []
 };
 
-export const getFeatureds = (state: any): IArticleReviewList => {
-  return state.articles ? state.articles.filter((article : IArticleReview) => article.featured) : []
+export const getSelected = (state: any): IArticleReviewList => {
+  return state.articles ? state.articles.filter((article : IArticleReview) => article.selected) : []
+};
+
+export const getFeatured = (state: any): IArticleReview => {
+  return state.articles ? state.articles.find((article : IArticleReview) => article.featured) : []
 };
 
 export const isLoading = (state: any): boolean => Boolean(state);
