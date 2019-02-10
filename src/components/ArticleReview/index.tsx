@@ -2,7 +2,6 @@ import * as React  from 'react';
 import { IArticleReview } from '../../api/articles';
 import { H2, P }   from '../Typography';
 import Cover       from './Cover'
-import Footer      from './Footer';
 import Header      from './Header';
 import * as Styles from './styles';
 import Wrapper from './Wrapper';
@@ -18,7 +17,7 @@ import Wrapper from './Wrapper';
 
 class ArticleReview extends React.PureComponent<IArticleReview> {
   public render() {
-    const { id, source_href, source_title, title, description, cover, selected } = this.props;
+    const { id, title, description, cover, selected } = this.props;
 
     return (
       <Wrapper selected={selected}>
@@ -30,10 +29,6 @@ class ArticleReview extends React.PureComponent<IArticleReview> {
             <H2>{title}</H2>
             <P>{description}</P>
           </Styles.Content>
-          <Footer
-            source_href={source_href}
-            source_title={source_title}
-          />
         </Styles.Inner>
       </Wrapper>
     );

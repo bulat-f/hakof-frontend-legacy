@@ -33,7 +33,6 @@ export const Link = styled(RouterLink)`
 
 export const Content = styled.div`
   margin: 0;
-  padding: 0.5rem 0;
 `;
 
 export const Header = styled.div`

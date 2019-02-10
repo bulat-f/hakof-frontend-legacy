@@ -11,16 +11,23 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  height: 4.5rem;
 `;
 
 export const Logo = styled(Link)`
+  position: relative;
   display: inline-block;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #000;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  color: #006;
   text-decoration: none;
   font-size: 2rem;
   z-index: 200;
+
+  &:after {
+    content: 'Hakof';
+    z-index: 10;
+  }
 `;
 
 export const MenuIcon = styled.div`
@@ -76,5 +83,25 @@ export const MenuItem = styled.li`
     font-size: 1.5rem;
     text-align: center;
     padding: 0.5rem 0;
+  }
+`;
+
+export const Login = styled(Link)`
+  padding: 0.5rem 1rem;
+  background: blue;
+  border-radius: 17px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  min-width: 6.5rem;
+
+  &:hover {
+    background: #66f;
+  }
+
+  &:active {
+    background: #00c;
   }
 `;

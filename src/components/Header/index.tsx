@@ -17,12 +17,13 @@ class Header extends React.PureComponent<{}, { showMenu: boolean }> {
       <Styles.Wrapper>
         <Grid>
           <Styles.Container>
-            <Styles.Logo to="/">Hakof</Styles.Logo>
-            <Styles.MenuIcon onClick={this.toggleMenu} />
+            <Styles.Logo to="/" />
             <Styles.Menu show={showMenu}>
               <Styles.MenuItem>Articles</Styles.MenuItem>
               <Styles.MenuItem>Novels</Styles.MenuItem>
             </Styles.Menu>
+            <Styles.Login to="/login">Login</Styles.Login>
+            <Styles.MenuIcon onClick={this.toggleMenu} />
           </Styles.Container>
         </Grid>
       </Styles.Wrapper>

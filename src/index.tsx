@@ -28,7 +28,7 @@ injectGlobal`
     box-sizing: border-box;
   }
 
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Sans+Pro:400,700,900&subset=cyrillic-ext');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Sans+Pro:400,700,900&subset=cyrillic-ext|Roboto+Slab:700');
 `;
 
 const store = configureStore();
